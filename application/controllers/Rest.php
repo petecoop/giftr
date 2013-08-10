@@ -16,6 +16,11 @@ class Rest extends CI_Controller
 	 */ 
  	public function profile()
  	{
+ 		$string = file_get_contents("php://input");
+ 		echo $string;
+ 		$post = json_decode($string, 1);
+ 		print_r($post);
+ 		
  		/*
 		 
   `id` int(11) NOT NULL AUTO_INCREMENT,
