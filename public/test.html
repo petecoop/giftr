@@ -8,7 +8,7 @@
 	<script src="components/angular/angular.min.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body ng-controller="IndexController" class="backgrounds" ng-class="bgClass">
+<body ng-controller="IndexController" class="backgrounds" ng-class="profile.occasion">
 	<div class="container">
 		<div class="col-6 col-offset-3">
 			<div class="headline">
@@ -38,8 +38,8 @@
 							</select>
 						</div>
 						<div class="col-6">
-							<select ng-change="background()" class="form-control" ng-model="profile.occasion">
-								<option value="">Occasion</option>
+							<select class="form-control" ng-model="profile.occasion">
+								<option value="gift">Occasion</option>
 								<option value="birthday">Birthday</option>
 								<option value="christmas">Christmas</option>
 								<option value="wedding">Wedding</option>

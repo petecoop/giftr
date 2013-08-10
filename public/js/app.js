@@ -2,12 +2,10 @@ var app = angular.module('giftr', []);
 
 app.controller('IndexController', function($scope, ProfileService, ProductService){
 
-	$scope.bgClass = "gift";
-
 	$scope.profile = {
 		age: "",
 		gender: "",
-		occasion: "",
+		occasion: "gift",
 		budget: ""
 	};
 	$scope.gotDetails = false;
@@ -65,22 +63,6 @@ app.controller('IndexController', function($scope, ProfileService, ProductServic
 			//get a new product back
 			$scope.products.push(data);
 		});
-	};
-
-	$scope.background = function(){
-		var bg = "";
-		switch($scope.profile.occasion){
-			case "christmas":
-				bg = "xmas";
-				break;
-			case "valentines":
-				bg = "valentines";
-				break;
-			default:
-				bg = "gift";
-				break;
-		}
-		$scope.bgClass = bg;
 	};
 
 });
