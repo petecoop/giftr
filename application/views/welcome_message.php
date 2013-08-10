@@ -16,22 +16,39 @@
 				<p>Smart gift recommendations</p>
 			</div>
 			<form class="stuffhere" ng-submit="submitProfile()">
-				<input class="form-control" ng-model="profile.age" placeholder="Age" type="text">
-				<select ng-model="profile.gender">
-					<option value="">Select Gender</option>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-				</select>
-				<select ng-model="profile.occasion">
-					<option value="">Select Occasion</option>
-					<option value="birthday">Birthday</option>
-					<option value="Wedding">Wedding</option>
-					<option value="anniversary">Anniversary</option>
-					<option value=""></option>
-					<option value=""></option>
-				</select>
-				<input class="form-control" placeholder="Budget" ng-model="profile.budget" type="text">
-				<button type="submit" class="btn btn-default">Get Suggested Gifts</button>
+				<div class="form-group clearfix">
+					<label class="control-label col-2">Age</label>
+					<div class="col-10">
+						<input class="form-control" placeholder="e.g 25.00" ng-model="profile.age" type="text">
+					</div>
+				</div>
+				<div class="form-group clearfix">
+					<label class="control-label col-2">Budget</label>
+					<div class="col-10">
+						<input class="form-control" placeholder="e.g 25.00" ng-model="profile.budget" type="text">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<select class="form-control" ng-model="profile.gender">
+							<option value="">Gender</option>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>
+					</div>
+					<div class="col-6">
+						<select class="form-control" ng-model="profile.occasion">
+							<option value="">Occasion</option>
+							<option value="birthday">Birthday</option>
+							<option value="wedding">Wedding</option>
+							<option value="anniversary">Anniversary</option>
+							<option value=""></option>
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+				<br>
+				<button type="submit" class="btn btn-primary">Get Suggested Gifts</button>
 			</form>
 			<ul>
 				<li ng-repeat="product in products">
