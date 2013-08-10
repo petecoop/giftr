@@ -1,13 +1,42 @@
-body{
+.backgrounds.gift{
 	background: url('/img/gift.jpg') no-repeat;
 	background-size: cover;
+}
+.backgrounds.gift2{
+	background: url('/img/gift2.jpg') no-repeat;
+	background-size: cover;	
+}
+.backgrounds.gift3{
+	background: url('/img/gift3.jpg') no-repeat;
+	background-size: cover;	
+}
+.backgrounds.valentines{
+	background: url('/img/valentines.jpg') no-repeat;
+	background-size: cover;	
+}
+.backgrounds.xmas{
+	background: url('/img/xmas.jpg') no-repeat;
+	background-size: cover;	
 }
 .headline{
 	margin-bottom: 80px;
 	color: white;
 }
-.stuffhere{
+.theform{
 	background-color: rgba(255,255,255,0.5);
-	padding: 20px;
 	border-radius: 3px;
+}
+.product{
+	margin: 10px -5px;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 3px;
+	height: 152px;
+	max-height: 152px;
+	padding: 5px;
+}
+.no-details{
+	padding: 20px;
+}
+.details{
+	padding: 5px;
 }
