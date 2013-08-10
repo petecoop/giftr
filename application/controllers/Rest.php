@@ -6,6 +6,34 @@ class Rest extends CI_Controller
 	{
 		parent::__construct();
 	}
+
+
+	/**
+	 *	Save the profile info
+	 *	@param integer $age the age 
+	 *	@param string $gender The gender
+	 *	@param string $occasion The Occasion
+	 *	@param integer $budget The gender
+	 */ 
+	public function rating()
+ 	{
+		$return = array();
+		
+		$string = file_get_contents("php://input");
+		$post = json_decode($string);
+		$data = array(
+			'rating'		=>	$post->rating,
+			'product_id'	=>	$post->product_id,
+			'user_id'		=>	$post->user_id
+		); 
+		
+		$q = $this->db->insert('votes', $data);
+		if($q->affected_rows()) 
+		{
+			$return['products'] = $this->products();
+		}
+		echo json_encode($return);
+	}
 	
 	/**
 	 *	Save the profile info
@@ -29,8 +57,13 @@ class Rest extends CI_Controller
 		
 		$q = $this->db->insert('profiles', $data);
 		$return['user_id'] = $this->db->insert_id();
-		$return['products'] = array();
- 		
+		$return['products'] = $this->products();
+		echo json_encode($return);
+ 	}
+ 	
+ 	public function products()
+ 	{
+ 		$return = array();
 		/**
 		 *	Get products with positive rating
 		 */
@@ -73,24 +106,7 @@ class Rest extends CI_Controller
 				$return['products'][$i]['image'] = $row->aw_image_url;
 				$i++;
 			}
-
 		}
-
-		echo json_encode($return);
-		/*
- 			id
- 			price
- 			desc
- 			pic
- 		
- 		
- 		*/
- 		
+		return $return;
  	}
- 
- /*age
- gender,
- occasion
- budget
-*/	
 }
