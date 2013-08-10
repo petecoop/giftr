@@ -36,7 +36,7 @@ app.controller('IndexController', function($scope, ProfileService, ProductServic
 app.factory('ProfileService', function($http){
 	return {
 		post: function(profile){
-			return $http.post('/rest/profile', profile);
+			return $http.post('/rest/profile', profile, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}});
 		}
 	};
 });
@@ -48,3 +48,8 @@ app.factory('ProductService', function($http){
 		}
 	};
 });
+
+// app.config(function($httpProvider){
+// 	$httpProvider.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
+
+// });
