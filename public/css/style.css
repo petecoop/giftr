@@ -1,0 +1,13 @@
+body{
+	background: url('/img/gift.jpg') no-repeat;
+	background-size: cover;
+}
+.headline{
+	margin-bottom: 80px;
+	color: white;
+}
+.stuffhere{
+	background-color: rgba(255,255,255,0.5);
+	padding: 20px;
+	border-radius: 3px;
+}
