@@ -9,10 +9,21 @@
 </head>
 <body ng-controller="IndexController">
 	<form ng-submit="submitProfile()">
-		Age:<input ng-model="profile.age" type="text">
-		gender:<input ng-model="profile.gender" type="text">
-		occasion:<input ng-model="profile.occasion" type="text">
-		budget:<input ng-model="profile.budget" type="text">
+		<input ng-model="profile.age" placeholder="Age" type="text">
+		<select ng-model="profile.gender">
+			<option value="">Select Gender</option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+		</select>
+		<select ng-model="profile.occasion">
+			<option value="">Select Occasion</option>
+			<option value="birthday">Birthday</option>
+			<option value="Wedding">Wedding</option>
+			<option value="anniversary">Anniversary</option>
+			<option value=""></option>
+			<option value=""></option>
+		</select>
+		<input placeholder="Budget" ng-model="profile.budget" type="text">
 		<button>Get Suggested Gifts</button>
 	</form>
 	<ul>
