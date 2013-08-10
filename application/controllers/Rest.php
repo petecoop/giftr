@@ -14,31 +14,76 @@ class Rest extends CI_Controller
 	 *	@param string $occasion The Occasion
 	 *	@param integer $budget The gender
 	 */ 
- 	public function profile()
+	public function profile()
  	{
- 		$string = file_get_contents("php://input");
- 		echo $string;
- 		$post = json_decode($string, 1);
- 		print_r($post);
+		$return = array();
+		
+		$string = file_get_contents("php://input");
+		$post = json_decode($string);
+		$data = array(
+			'age'	=>	$post->age,
+			'gender'=>	$post->gender,
+			'occasion'=>$post->occasion,
+			'budget'=>$post->budget
+		); 
+		
+		$q = $this->db->insert('profiles', $data);
+		$return['user_id'] = $this->db->insert_id();
+		$return['products'] = array();
  		
- 		/*
-		 
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `age` int(11) DEFAULT '0',
-  `gender` enum('m','f') DEFAULT 'm',
-  `occasion` varchar(30) DEFAULT NULL,
-  `budget` varchar(4) DEFAULT NULL,		 
+		/**
+		 *	Get products with positive rating
 		 */
- 		/*
- 		$post = json_decode($this->input->post(''))
+
+		$sql = 'SELECT * FROM products p LEFT JOIN votes v on v.product_id = p.id WHERE rating > 0;';
+		$q = $this->db->query($sql);
+
+		$rows = $q->num_rows();
+		$limit = 4;
+		
+		if($rows > 0)
+		{
+			if($rows < 4)
+			{
+				$limit = (4 - $rows);
+			}
+			else
+			{
+				$limit = 0;
+			}
+		}
+		else 
+		{
+			$limit = 4;
+		}
+		#name, desc, id, price
+		
+		if($limit > 0)	//	we need products
+		{
+			$sql = 'SELECT * FROM products LIMIT 4;';
+			$q = $this->db->query($sql);
+
+			$i = 0;
+			foreach($q->result() as $row)
+			{
+				$return['products'][$i]['id'] = $row->id;
+				$return['products'][$i]['name'] = $row->product_name;
+				$return['products'][$i]['description'] = $row->description;
+				$return['products'][$i]['price'] = $row->search_price;
+				$return['products'][$i]['image'] = $row->aw_image_url;
+				$i++;
+			}
+
+		}
+
+		echo json_encode($return);
+		/*
+ 			id
+ 			price
+ 			desc
+ 			pic
  		
- 		$data = array(
- 			'age'	=>	
-		 
-		 
-		 ); 
  		
- 		$q = $this->db->insert
  		*/
  		
  	}
