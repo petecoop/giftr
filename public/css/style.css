@@ -30,14 +30,24 @@
 .backgrounds.gift{
 	background: url('/img/gift.jpg') center center fixed no-repeat;
 	background-size: cover;
+	background-position: center;
 }
-.backgrounds.gift2{
+.backgrounds.birthday{
 	background: url('/img/gift2.jpg') center center fixed no-repeat;
-	background-size: cover;	
+	background-size: cover;
+	background-position: center;
+	color: white;
 }
-.backgrounds.gift3{
+.backgrounds.birthday .theform{
+	background-color: rgba(0,0,0,0.5);
+}
+.backgrounds.birthday .product{
+	background-color: rgba(0,0,0,0.5);
+}
+.backgrounds.wedding{
 	background: url('/img/gift3.jpg') center center fixed no-repeat;
-	background-size: cover;	
+	background-size: cover;
+	background-position: center;	
 }
 .backgrounds.valentines{
 	background: url('/img/valentines.jpg') center center fixed no-repeat;
@@ -53,7 +63,8 @@
 }
 .backgrounds.christmas{
 	background: url('/img/xmas.jpg') center center fixed no-repeat;
-	background-size: cover;	
+	background-size: cover;
+	background-position: center;
 }
 .thebuttons{
 	padding: 0;
