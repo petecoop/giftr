@@ -92,7 +92,7 @@
 	background-color: #d9534f;
 	border-color: #d9534f;
 }
-.btn-dislike:hover i, .btn-dislike.active{
+.btn-dislike:hover i, .btn-dislike.active i{
 	color: white;
 }
 .btn-perfect{

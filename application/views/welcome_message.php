@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Giftr</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="css/bootstrap-glyphicons.css">
 	<link rel="stylesheet" href="css/style.css">
