@@ -38,6 +38,9 @@
 	background-position: center;
 	color: white;
 }
+.backgrounds.birthday .headline{
+	color: black;
+}
 .backgrounds.birthday .theform{
 	background-color: rgba(0,0,0,0.5);
 }

@@ -28,7 +28,7 @@ app.controller('IndexController', function($scope, ProfileService, ProductServic
 	$scope.rate = function(rating, product){
 		product[rating] = true;
 		//post a taste rating
-		ProductService.postTaste({
+		ProductService.postRating({
 			product_id: product.id,
 			user_id: $scope.profile.id,
 			rating: rating
@@ -51,8 +51,8 @@ app.factory('ProfileService', function($http){
 
 app.factory('ProductService', function($http){
 	return {
-		postTaste: function(taste){
-			return $http.post('/rest/taste', taste);
+		postRating: function(rating){
+			return $http.post('/rest/rating', rating);
 		}
 	};
 });

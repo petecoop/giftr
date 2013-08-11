@@ -7,7 +7,6 @@ class Rest extends CI_Controller
 		parent::__construct();
 	}
 
-
 	/**
 	 *	Save the profile info
 	 *	@param integer $age the age 
@@ -28,10 +27,7 @@ class Rest extends CI_Controller
 		); 
 		
 		$q = $this->db->insert('votes', $data);
-		if($q->affected_rows()) 
-		{
-			$return['products'] = $this->products();
-		}
+		$return['products'] = $this->products();
 		echo json_encode($return);
 	}
 	
