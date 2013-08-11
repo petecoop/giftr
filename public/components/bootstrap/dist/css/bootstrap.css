@@ -876,10 +876,43 @@ pre code {
 .col-12 {
   width: 100%;
 }
+.col-sm-offset-1 {
+  margin-left: 8.333333333333332%;
+}
+.col-sm-offset-2 {
+  margin-left: 16.666666666666664%;
+}
+.col-sm-offset-3 {
+  margin-left: 25%;
+}
+.col-sm-offset-4 {
+  margin-left: 33.33333333333333%;
+}
+.col-sm-offset-5 {
+  margin-left: 41.66666666666667%;
+}
+.col-sm-offset-6 {
+  margin-left: 50%;
+}
+.col-sm-offset-7 {
+  margin-left: 58.333333333333336%;
+}
+.col-sm-offset-8 {
+  margin-left: 66.66666666666666%;
+}
+.col-sm-offset-9 {
+  margin-left: 75%;
+}
+.col-sm-offset-10 {
+  margin-left: 83.33333333333334%;
+}
+.col-sm-offset-11 {
+  margin-left: 91.66666666666666%;
+}
 
 @media (min-width: 768px) {
   .container {
-    max-width: 728px;
+    max-width: 100%;
   }
   .col-sm-1,
   .col-sm-2,
@@ -999,7 +1032,7 @@ pre code {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .container {
     max-width: 940px;
   }

@@ -11,7 +11,7 @@
 </head>
 <body ng-controller="IndexController" class="backgrounds" ng-class="profile.occasion">
 	<div class="container">
-		<div class="col-6 col-offset-3">
+		<div class="col-12 col-lg-6 col-offset-3">
 			<div class="headline">
 				<h1 class="logo">Giftr</h1>
 				<p>Smart gift recommendations</p>
@@ -57,7 +57,7 @@
 				</div>
 			</form>
 			<div class="row">	
-				<div class="col-6" ng-repeat="product in products">
+				<div class="col-12 col-lg-6" ng-repeat="product in products">
 					<div class="product">
 						<img class="img-thumbnail col-4" ng-src="{{ product.image }}">
 						<div class="col-8">
