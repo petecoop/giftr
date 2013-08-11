@@ -15,20 +15,20 @@
 		<div class="col-12 col-lg-6 col-offset-3">
 			<div class="headline">
 				<h1 class="logo">Giftr</h1>
-				<p>Smart gift recommendations</p>
+				<p class="lead">Smart gift recommendations</p>
 			</div>
 			<form class="theform" ng-submit="submitProfile()">
 				<div class="no-details clearfix" ng-hide="gotDetails">
 					<div class="form-group clearfix">
 						<label class="control-label col-2">Age</label>
 						<div class="col-10">
-							<input class="form-control" placeholder="e.g 23" ng-model="profile.age" type="text">
+							<input class="form-control" placeholder="e.g 23" ng-model="profile.age" type="number">
 						</div>
 					</div>
 					<div class="form-group clearfix">
-						<label class="control-label col-2">Budget</label>
+						<label class="control-label col-2">Budget (£)</label>
 						<div class="col-10">
-							<input class="form-control" placeholder="e.g 25.00" ng-model="profile.budget" type="text">
+							<input class="form-control" placeholder="e.g 25.00" ng-model="profile.budget" type="number">
 						</div>
 					</div>
 					<div class="row">
