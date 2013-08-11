@@ -7,12 +7,19 @@
 	border-radius: 3px;
 }
 .product{
-	margin: 10px -5px;
+	margin: 5px -10px;
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 3px;
-	height: 152px;
-	max-height: 152px;
+	height: 136px;
+	max-height: 136px;
 	padding: 5px;
+}
+.product img{
+	margin-bottom: 5px;
+	max-height: 91px;
+}
+.product h3{
+	margin-top: 0;
 }
 .no-details{
 	padding: 20px;
@@ -20,31 +27,23 @@
 .details{
 	padding: 5px;
 }
-.inverted{
-	color: white;
-}
-.inverted .theform{
-	background-color: rgba(0,0,0,0.5);
-}
-.inverted .product{
-	background-color: rgba(0,0,0,0.5);
-}
 .backgrounds.gift{
-	background: url('/img/gift.jpg') no-repeat;
+	background: url('/img/gift.jpg') center center fixed no-repeat;
 	background-size: cover;
 }
 .backgrounds.gift2{
-	background: url('/img/gift2.jpg') no-repeat;
+	background: url('/img/gift2.jpg') center center fixed no-repeat;
 	background-size: cover;	
 }
 .backgrounds.gift3{
-	background: url('/img/gift3.jpg') no-repeat;
+	background: url('/img/gift3.jpg') center center fixed no-repeat;
 	background-size: cover;	
 }
 .backgrounds.valentines{
-	background: url('/img/valentines.jpg') no-repeat;
+	background: url('/img/valentines.jpg') center center fixed no-repeat;
 	background-size: cover;
 	color: white;
+	background-position: center;
 }
 .backgrounds.valentines .theform{
 	background-color: rgba(0,0,0,0.5);
@@ -53,6 +52,62 @@
 	background-color: rgba(0,0,0,0.5);
 }
 .backgrounds.christmas{
-	background: url('/img/xmas.jpg') no-repeat;
+	background: url('/img/xmas.jpg') center center fixed no-repeat;
 	background-size: cover;	
+}
+.thebuttons{
+	padding: 0;
+}
+.btn-default{
+	color: #333333;
+	background-color: #ffffff;
+	border-color: #cccccc;
+}
+.btn-like{
+	color: #333333;
+	background-color: #ffffff;
+	border-color: #cccccc;
+}
+.btn-like i{
+	color: #5cb85c;
+}
+.btn-like:hover, .btn-like.active{
+	color: white;
+	background-color: #5cb85c;
+	border-color: #5cb85c;
+}
+.btn-like:hover i, .btn-like.active i{
+	color: white;
+}
+.btn-dislike{
+	color: #333333;
+	background-color: #ffffff;
+	border-color: #cccccc;
+}
+.btn-dislike i{
+	color: #d9534f;
+}
+.btn-dislike:hover, .btn-dislike.active{
+	color: white;
+	background-color: #d9534f;
+	border-color: #d9534f;
+}
+.btn-dislike:hover i, .btn-dislike.active{
+	color: white;
+}
+.btn-perfect{
+	color: #333333;
+	background-color: #ffffff;
+	border-color: #cccccc;
+}
+.btn-perfect i{
+	color: #428bca;
+}
+.btn-perfect:hover, .btn-perfect.active{
+	color: white;
+	background-color: #428bca;
+	border-color: #428bca;
+}
+.btn-perfect:hover i, .btn-perfect.active i{
+	color: white;
 }

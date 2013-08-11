@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Giftr</title>
 	<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-glyphicons.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="components/angular/angular.min.js"></script>
 	<script src="js/app.js"></script>
@@ -63,9 +64,11 @@
 							<h3>{{ product.name }}</h2>
 							<h4>{{ product.price | currency:"£"}}</h4>
 						</div>
-						<button class="btn btn-danger btn-small" ng-click="rate('dislike', product.id)">dislike</button>
-						<button class="btn btn-success btn-small" ng-click="rate('like', product.id)">like</button>
-						<button class="btn btn-primary btn-small" ng-click="rate('perfect', product.id)">perfect</button>
+						<div class="btn-group thebuttons col-12">
+							<button class="col-4 btn btn-dislike btn-small" ng-class="{active: product.dislike }" ng-click="rate('dislike', product)"><i class="glyphicon glyphicon-thumbs-down"></i> dislike</button>
+							<button class="col-4 btn btn-like btn-small" ng-class="{active: product.like }" ng-click="rate('like', product)"><i class="glyphicon glyphicon-thumbs-up"></i> like</button>
+							<button class="col-4 btn btn-perfect btn-small" ng-class="{active: product.perfect }" ng-click="rate('perfect', product)">perfect <i class="glyphicon glyphicon-ok"></i></button>
+						</div>
 					</div>
 				</div>
 			</div>

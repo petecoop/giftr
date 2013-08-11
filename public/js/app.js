@@ -53,14 +53,16 @@ app.controller('IndexController', function($scope, ProfileService, ProductServic
 		$scope.gotDetails = true;
 	};
 
-	$scope.rate = function(rating, id){
+	$scope.rate = function(rating, product){
+		product[rating] = true;
 		//post a taste rating
 		ProductService.postTaste({
-			product_id: id,
+			product_id: product.id,
 			user_id: $scope.profile.id,
 			rating: rating
 		}).success(function(data){
 			//get a new product back
+			$scope.products.splice($scope.products.indexOf(product), 1);
 			$scope.products.push(data);
 		});
 	};
