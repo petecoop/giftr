@@ -26,6 +26,10 @@ app.controller('IndexController', function($scope, ProfileService, ProductServic
 	};
 
 	$scope.rate = function(rating, product){
+		if(rating == "perfect"){
+			var win = window.open(product.aw_deep_link, '_blank');
+			win.focus();
+		}
 		product[rating] = true;
 		//post a taste rating
 		ProductService.postRating({
@@ -34,8 +38,7 @@ app.controller('IndexController', function($scope, ProfileService, ProductServic
 			rating: rating
 		}).success(function(data){
 			//get a new product back
-			$scope.products.splice($scope.products.indexOf(product), 1);
-			$scope.products.push(data);
+			$scope.products = data.products;
 		});
 	};
 

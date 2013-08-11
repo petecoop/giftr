@@ -22,14 +22,27 @@ class Rest extends CI_Controller
 		
 		$string = file_get_contents("php://input");
 		$post = json_decode($string);
+		$rating = $post->rating;
+		$intrating = 0;
+		switch ($rating) {
+			case 'like':
+				$intrating = 1;
+				break;
+			case 'dislike':
+				$intrating = -1;
+				break;
+			case 'perfect':
+				$intrating = 2;
+				break;
+		}
 		$data = array(
-			'rating'		=>	$post->rating,
+			'rating'		=>	$intrating,
 			'product_id'	=>	$post->product_id,
 			'user_id'		=>	$post->user_id
 		); 
 		
 		$q = $this->db->insert('votes', $data);
-		$return['products'] = $this->products();
+		$return['products'] = $this->products($post->user_id);
 		echo json_encode($return);
 	}
 	
@@ -62,7 +75,7 @@ class Rest extends CI_Controller
  	public function products($userid)
  	{
 
-		echo json_encode($this->algorithm($userid));
+		return $this->algorithm($userid);
  	}
  	
  	

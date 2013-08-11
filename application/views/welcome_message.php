@@ -60,10 +60,10 @@
 			<div class="row">	
 				<div class="col-12 col-lg-6" ng-repeat="product in products">
 					<div class="product">
-						<img class="img-thumbnail col-4" ng-src="{{ product.image }}">
+						<img class="img-thumbnail col-4" ng-src="{{ product.aw_image_url }}">
 						<div class="col-8">
-							<h3>{{ product.name }}</h2>
-							<h4>{{ product.price | currency:"£"}}</h4>
+							<h3>{{ product.product_name }}</h2>
+							<h4>{{ product.search_price | currency:"£"}}</h4>
 						</div>
 						<div class="btn-group thebuttons col-12">
 							<button class="col-4 btn btn-dislike btn-small" ng-class="{active: product.dislike }" ng-click="rate('dislike', product)"><i class="glyphicon glyphicon-thumbs-down"></i> dislike</button>

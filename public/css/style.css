@@ -20,6 +20,8 @@
 }
 .product h3{
 	margin-top: 0;
+	max-height: 58px;
+	overflow: hidden;
 }
 .no-details{
 	padding: 20px;
